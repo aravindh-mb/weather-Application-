@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn</title>
+
+    <!-- css file -->
+    <link rel="stylesheet" href="SignIn.css">
+
+    <!-- Js file -->
+    <script src="Signin.js"></script>
+
+     <!-- Font Awesome CDN -->
+  <script src="https://kit.fontawesome.com/21fadd9069.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="container" data-tilt>
+        <form action="../test.js" method="post" class="form">
+            <div class="fontuser">
+                <i class="fa fa-user fa-lg"></i>
+                <input type="text" name="email" id="user-email" required placeholder="youremail@gmail.com" autocomplete="off" spellcheck="false">
+            </div>
+
+            <div class="fontpassword">
+                <i class="fa fa-key fa-lang"></i>
+                <input type="password" name="password" id="user-password" required placeholder="password">
+                <!-- <i class="fa-solid fa-eye" style="position:relative;margin-right:0px;" id="eye"></i>
+                <i class="fa-solid fa-eye-slash" id="eye-cross"></i> -->
+            </div>
+
+            <div class="sp" style="display:flex;">
+                <input type="checkbox" style="margin-left:40px;" name="checkbox" id="cbox" onclick="showPassword()">
+                <p style="margin-top:8px;">show password</p>
+            </div>
+
+            <div class="signin">
+                <input class="signin-btn" type="submit" style="font-size:12px;border:1px solid green;">
+            </div>
+        </form>
+    </div>
+
+    Jquery
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Tilt.js -->
+    <script src="../library/tilt.js-master/src/tilt.jquery.js"></script>
+</body>
+</html>

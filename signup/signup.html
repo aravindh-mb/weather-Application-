@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+    <title>SignIn</title>
+
+    <!-- FavIcon -->
+    <link rel="shortcut icon" href="../assets/weather.png" type="image/x-icon">
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#3eeec2">
+    
+    <!--css file link -->
+    <link rel="stylesheet" href="signup.css">
+
+    <!-- push.js -->
+    <script src="push.min.js"></script>
+
+    <!-- js file -->
+    <script src="signup.js"></script>
+
+    <!-- Font Awesome CDN -->
+  <script src="https://kit.fontawesome.com/21fadd9069.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap -->
+    
+</head>
+<body>
+<div class="container">
+    <div class="square">
+        <div class="box1 shape"></div>
+        <div class="box2 shape"></div>
+        <div class="box3 shape"></div>
+    </div>
+        <h2 class="title ">Weather Application</h2><br>
+        <form action="../php/actions.php" method="GET">
+            <input class="inpt username" id="username" type="text" spellcheck="false" autocomplete="off" placeholder="username" name="user_name" pattern="[a-z0-9]*"> 
+            <input class="inpt email" id="email" type="text" required spellcheck="false" autocomplete="off" placeholder="email" name="user_email">
+            <input class="inpt password" id="password" type="password" required spellcheck="false" autocomplete="off" placeholder="password" name="user_password" >
+            <!-- <input class="inpt password2" id="password2" type="password" required spellcheck="false" autocomplete="off" placeholder="confirm password" name="user_password2" > -->
+            <input class="inpt mobile" id="mobile" type="number" required spellcheck="false" autocomplete="off" placeholder="mobile" name="user_mobile" >
+            <!-- <input type="file" style="color:black;border:none;outline:none;padding:8px;cursor:pointer"> -->
+            <input class="submit" id="submit"  type="Submit" required value="Login" name="submitvalue">
+        <!-- <h5 href="" style="margin:8px 5px 8px 80px;color:black;">already have a account ? <a href="../signIn/signIn.html">Sign In</a> </h5> -->
+
+        </form>
+</div>
+<!-- <script>
+    push.create("hello");
+</script> -->
+<div id="snackbar">Fill Data.....</div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+::root{
+    --bg-color:rgb(219, 15, 15);
+    --btn-color:rgb(60, 60, 243);
+}  
+body{
+    background-color:white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
+html{
+    scroll-behavior: smooth;
+}
+.basicpage{
+    top:15%;
+    display: grid;
+    place-content: center;
+}
+.basicimage{
+    height: 500px;
+    animation:animateimg 2s ease-out;
+    margin-left:15% auto;
+}
+@keyframes animateimg{
+    from{
+        transform: translateY(130px);
+        opacity: 0;
+    }
+    to{
+         transform: translateY(0px);
+         opacity:1;
+    }
+}
+.text h4{
+    outline: none;
+    border: none;
+    overflow: hidden;
+
+    width: 330px;
+    border-radius: 20px;
+    text-align: center;
+    color: white;
+    font-weight: 800;
+    padding:10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: rgb(72, 204, 116);
+    animation: txt 1.8s ease-in-out;
+    margin-left:50px;
+}
+a{
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    outline: none;
+}
+h3:active{
+    transform: translateX(100px);
+    transition: 3s;
+}
+@keyframes txt{
+    from{
+        transform: translateY(180px);
+        opacity: 0;
+    }
+    to{
+         transform: translateY(0px);
+         opacity: 1;
+    }
+}

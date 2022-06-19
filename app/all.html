@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+
+<!-- Theme color -->
+<meta name="theme-color" content="hsl(24.3, 97.4%, 54.3%)"> 
+
+
+<!-- for wider screen devices   " -->
+<link rel="stylesheet"  media="screen and (min-device-width: 768px)" href="./desktop.css">
+
+<!-- for mobile phones -->
+<link rel="stylesheet" media="screen and (max-device-width: 600px)" href="./mobile.css" />
+
+<!-- favicon -->
+<link rel="shortcut icon" href="../assets/logo.png" type="image/x-icon">
+
+<!-- Font Awesome (Content Delivery Network) -->
+<script src="https://kit.fontawesome.com/21fadd9069.js" crossorigin="anonymous"></script>
+
+<!-- css animated  -->
+<link rel="stylesheet" href="../animatedbackground.css">
+
+<!-- sweet alert -->
+<script src="../sweetalert-2.1.2/package/dist/sweetalert.min.js"></script>
+
+                    <!-- Open Graph for SEO-->
+<!-- title -->
+<meta property="og:title" content="Weather Application Management System"/>
+
+<!-- OG website url -->
+<meta property="og:url" content=”http://www.yourwonderfulsite.com”/>
+
+<!-- OG type -->
+<meta property="og:type" content="website"/>
+
+<!-- OG discription -->
+<meta property="og:type" content="weather app brings current weather Updates, and best UI" />
+
+<!-- OG Image -->
+<meta property=”og:image” content=”http://www.yourwonderfulsite.com/image-name.jpg” />
+
+<title>Main App</title>
+</head>
+<body>
+<!-- for menu icon -->
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "100%";
+    }
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+    </script>
+<!-- all items -->
+<div class="container">
+<!-- page header -->
+<nav class="headers">
+    <!-- menue -->
+    <span style="font-size:30px;cursor:pointer" onclick="openNav()"><i class="fa-solid fa-bars"></i></span>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="https://github.com/aravindh-mb">GitHub</a>
+        <a href="https://www.instagram.com/webdevfrontend/">Instagram</a>
+        <a href="https://openweathermap.org/">Open Weather Map API</a>
+
+        <a href="#">Website Deployment</a>
+        </div>
+            <!-- title -->
+    <div class="title">
+            <img src="../assets/logo.png" alt="">
+        <h2>Weather Today</h2>
+    </div>
+            <!-- dark mode -->
+    <div class="darkmode">
+        <!-- <img src="../assets/dark mode.png" alt="dark mode icon" style="width:30px;"> -->
+        Dark Mode<span style="margin-right:4px;"><i class="fa-solid fa-moon" style="position:relative;color:rgb(255, 255, 255);left:12px;width: 20px;" ></i></span> <input id="cb" type="checkbox"  style="position:absolute;width:70px;accent-color: rgb(56, 243, 56);margin:4px 0 0 -10px;opacity:0.01">   
+    </div>
+    <div id="share-btn">
+        Share <i class="fa-solid fa-arrow-up-right-from-square" style="width:15px;color: rgb(255, 255, 255);" onclick="vibrate(2000)"></i>
+    </div>
+    <!-- <button class="history2" onclick="history()">
+        History
+    </button> -->
+
+
+</nav>
+<!--------------------------------------------------------------------------------------------------------------->
+<!-- search container -->
+<div class="searchcontainer">
+    <div class="search">
+            <div class="text"  >
+                <input type="text" placeholder="Search by city or country..." id="search" autocomplete="off" value="thiruvarur">
+            </div>
+            <div class="voice">
+                <img style="width:35px;margin-top:10px;" src="../assets/mic green.png" alt="voice icon" onclick="runSpeechRecognition()">
+            </div>
+            <div class="go" onclick="saveLocalStorage()">
+            Search</div>
+            <div id="action" style="color: rgb(193, 64, 3);font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;transition: 0.9s;"></div>
+    </div>
+</div>
+<!-- ------------------------------------------------------------------------------------------ -->
+<div class="gridcontainer">
+    <!-- boxes and items -->
+    <div class="boxes">
+        <div class="box_1">
+            <h4>Your Info</h4>
+            <ul>
+                <br><br>
+                <li><i class="fa-solid fa-compass"></i>Latitude &nbsp;&nbsp;&nbsp;&nbsp;:<span  id="locationLatitude" style="color:green;">&nbsp; Loading...</span> </li>
+                <br>
+                <li><i class="fa-solid fa-location-dot"></i>Longitude :<span id="locationLongitude" style="color:green;">&nbsp; Loading...</span></li>
+            </ul>
+        </div>
+
+
+        <div class="box_2">
+            <h4>Temprature</h4>
+               
+                    <h1 id="celsius">0<sup>o</sup> C</h1>
+                        <h3 id="description">Description</h3>
+            </div>
+            
+            <div class="box_2">
+                <h4>Search location info</h4>
+                        <br><br>
+                        <h1 id="region">loading....</h1>
+                </div>
+
+            <div class="box_2">
+                <h4>Zone</h4>
+                <h2 id="country">Loading...</h2>
+                <br>
+                <h2 id="zone">Loading...</h2>
+                <br>
+                <h2 id="lastUpdated">Loading...</h2>       
+            </div>
+
+
+            <div class="box_2">
+                <h4>Wind Direction</h4>
+                <br><br>
+                <h1 id="windDirection">Loading...</h1>
+            </div>
+
+            <div class="box_4"> 
+            <h4>Pressure</h4>
+                <img src="../assets/1.png">
+                <h1 id="pressure">0</h1>
+
+            </div>
+            <div class="box_5">
+            <h4>Wind Speed</h4>
+            <img src="../assets/windspeed.png" alt="img">
+            <h1 id="windspeed">0</h1>
+            </div>
+
+            <div class="box_2">
+            <h4>Humidity</h4>
+                <img src="../assets/humidity.png" alt="ds">
+                <h1 id="humidity">0</h1>
+            </div>
+                </div>
+</div>
+<!--  --------------------------------------------------------->
+<!-- google maps for the place  -->
+</div>     
+<!-- container end -->
+
+<!-- animated background  -->
+<div class="header">
+<!--Waves Container-->
+<div class="wave">
+<svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+<defs>
+<path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+</defs>
+<g class="parallax">
+<use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+<use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+<use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+<use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+</g>
+</svg>
+</div>
+<!--Waves end-->
+</div>
+<!--Header ends-->
+
+<!--Content starts-->
+<div class="content flex">
+<div class="socialmedia">
+<h3>Social Media</h3>
+<hr>
+<ul>
+    <!-- let api =  `http://api.weatherapi.com/v1/current.json?key=9bb24752152641ceb73145704221806&q=madurai'; -->
+
+    <li><i class="fa-brands fa-blogger"style="color:orange;" ></i><a href="https://www.mrblackblogging.blogspot.com">Blog</a></li>
+    <li><i class="fa-brands fa-github"></i><a href="https://www.github.com/aravindh-mb">GitHub</a></li>
+    <li><i class="fa-brands fa-instagram" style="color:rgb(251, 141, 50);"></i><a href="https://www.instagram.com/webdevfrontend">Instagram</a></li>
+    <!-- <li><i class="fa-brands fa-youtube"style="color:red;" ></i><a href="https://www.mrblackblogging.blogspot.com">youtube</a></li> -->
+
+</ul>
+</div>
+<div class="pages">
+<h3 style="color:black;">Pages</h3>
+<hr>
+<ul>
+    <li><i class="fa-solid fa-house" style="color:rgb(57, 168, 57);"></i><a href="#">Home</a> </li>
+    <li><i class="fa-solid fa-message" style="color: rgb(201, 147, 47);"></i><a href="#">Contact</a></li>
+    <li><a href ="#"><i class="fa-solid fa-cloud-arrow-up"></i>Website Deployment</a></li>
+</ul>
+</div>
+<br>
+<div class="team">
+    <h3 style="color:black;">Team</h3> 
+<p style="color:black"> Developed By <span style="color: green;font-weight: 700;font-family:'Segoe UI'">Aravindh</span> and <span style="color: green;font-weight: 700;font-family:'Segoe UI'">Jaiganesh</span></p>
+</div>
+</div>
+<!--Content ends-->
+<style>
+    
+</style>
+<!-- vibrate.js file  -->
+<script src="../app/vibrate.js"></script>
+<!-- darkmode -->
+<script src="darkmode.js"></script>
+<!-- web share API -->
+<script src="webshare.js"></script>
+<!-- notification.js -->
+<script src="notification.js"></script>
+<!-- localstorage history -->
+<script src="../localstorage.js"></script>
+<!-- offline detection -->
+<script src="./offline detection.js"></script>
+<!-- voice recognition js file  -->
+<script src="../app/voice recognition.js"></script>
+<!-- main js file  -->
+<script src="js.js"></script>
+</body>
+</html>
+
